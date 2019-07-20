@@ -121,7 +121,7 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.0/howto/static-files/
+# https://docs.djangoproject.com/en/2.0/howto/static-files/ 
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'portfolio/static/')
@@ -132,3 +132,8 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+try:
+    from local_setting import *
+except ImportError:
+    pass
